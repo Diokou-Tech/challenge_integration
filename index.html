@@ -15,12 +15,45 @@
 </head>
 <body>
     <!-- header  -->
-    <div class="h-screen">
-    <header class="h-50 p-10 flex  justify-around w-full items-center border-b-2">
-        <div class="logo font-bold text-teal-700 text-4xl">
+    <div class="min-h-screen">
+                <!-- Mobile menu -->
+                <div id="mobile" class="opacity-[.95] transition duration-150 ease-in-out hidden flex flex-col sm:hidden z-20 w-2/3 absolute h-screen bg-green-500">
+                    <div class="font-bold p-10 text-center text-white text-4xl">
+                        LOGO
+                    </div>
+                    <small class="border border-green-600 w-full"></small>
+                    <nav class="flex flex-col">
+                        <ul class="flex flex-col text-white justify-center text-xl bold">
+                            <li class="mx-4 my-3">
+                                <a href="./#apropos">A propos</a>
+                            </li>
+                            <li class="mx-4 my-3">
+                                <a href="./#expertises">Expertises</a>
+                            </li>
+                            <li class="mx-4 my-3">
+                                <a href="./#realisations">Réalisations</a>
+                            </li>
+                            <li class="mx-4 my-3">
+                                <a href="./#equipe">Equipe</a>
+                            </li>
+                            <li class="mx-4 my-3">
+                                <a href="./#contact">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+    <header class="h-50 p-10 flex justify-between sm:justify-evenly w-full items-center border-b-2">
+        <div class="font-bold text-teal-700 text-4xl">
             LOGO
         </div>
-        <nav>
+        <a class="flex sm:hidden w-8 text-green-500" onclick="toggleMenu()" >
+            <svg id="open" title="Ouvrir Menu" xmlns="http://www.w3.org/2000/svg" class="h-8 fill-green-500" viewBox="0 0 512 512">
+                <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM64 256c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H96c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/>
+            </svg>
+            <svg id="close" title="Fermer menu" xmlns="http://www.w3.org/2000/svg"  class="h-8 fill-green-500 hidden" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>      
+        </a>
+        <!-- end mobile menu  -->
+        <nav class="hidden sm:flex">
             <ul class="flex text-green-700 justify-center text-xl bold">
                 <li class="mx-4">
                     <a href="./#apropos">A propos</a>
@@ -42,22 +75,22 @@
     </header>
     <!-- end header -->
     <!-- home  -->
-    <div class="container mx-auto flex h-100 justify-around items-center" style="min-height: 80vh;">
-        <div class="w-2/4 p-4">
-            <h1 class="text-5xl text-emerald-800 font-bold font-mono my-4">Conception pour livrer</h1>
+    <div class="container mx-auto flex flex flex-col  sm:flex-row justify-around items-center" style="min-height: 80vh;padding:5px;">
+        <div class="p-4 md:w-2/4 w-full">
+            <h1 class="sm:text-5xl text-4xl text-emerald-800 font-bold font-mono my-4">Conception pour livrer</h1>
             <p class="my-5 font-light">
                 Africa bloom corporate est un conglomerat majeur des travaux publics et du batiement au Sénégal et dans la Sous-Région Ouest Africaine.
             </p>
-            <div class="btn-groups my-4">
-                <button class="border-2 border-green-400 text-green-500 mr-4 hover:bg-green-400 duration-500 hover:text-white p-4 rounded-lg">
+            <div class="btn-groups flex justify-center flex-wrap p-3 my-4">
+                <a href="./#apropos" class="border-2 m-1 border-green-400 text-green-500 mr-4 hover:bg-green-400 duration-500 hover:text-white p-4 rounded-lg">
                     Qui sommes nous ?
-                </button>
-                <button class="bg-green-400 text-white p-4 rounded-lg hover:bg-white duration-500 hover:text-green-500 hover:border-2 hover:border-green-400">
+                </a>
+                <a href="./#realisations" class="bg-green-400 m-1 text-white p-4 rounded-lg hover:bg-white duration-500 hover:text-green-500 hover:border-2 hover:border-green-400">
                     Nos réalisations
-                </button>
+                </a>
             </div>
         </div>
-        <div class="w-2/4 flex h-2/5 m-5 sm:flex-row sm:flex-wrap justify-around items-center">
+        <div class="w-2/4 md:w-2/4 w-full h-2/5 m-5 sm:flex-row hidden sm:flex sm:flex-wrap justify-around items-center">
             <div class="w-1/4 border shadow-lg h-72 translate-y-20">
                 <figure>
                     <img src="./img/home9.jpg" alt="" class="img h-72" >
@@ -86,28 +119,31 @@
     <!-- end home -->
 </div>
     <!-- a propos -->
-        <div id="apropos" class="h-screen bg-gray-50 p-10 flex justify-center items-center">
-            <div class="w-2/4">
-                <div class="border w-96 bg-green-300 px-10 m-10 min-h-96 rounded-lg">
-                    <img src="img/home5.jpg" class="-translate-y-20 h-96">
+        <div id="apropos" class="min-h-screen bg-gray-50 sm:p-10 flex flex-col  sm:flex-row justify-center items-center">
+            <div class="md:w-2/4 w-full">
+                <div class="border sm:w-96 bg-green-300 sm:px-8 px-4 m-10 min-h-96 rounded-lg">
+                    <img src="img/home5.jpg" class="-translate-y-20 sm:h-96 h-60">
                 </div>
             </div>
-            <div class="w-1/3">
-                <h1 class="text-2xl my-4 font-semibold">
+            <div class="md:w-1/3 w-full">
+                <h1 class="text-2xl p-4  my-4 sm:text-left text-center font-semibold">
                     A propos de nous 
                 </h1>
-               <p class="font-normal text-teal-800  leading-8 text-justify">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam a corporis laboriosam cupiditate ad distinctio officiis vitae, ex quasi dolorem aliquam tempore quam rem placeat similique commodi, necessitatibus minus accusantium!
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati perspiciatis amet, libero facere voluptas ex minima ea animi perferendis non deleniti, cupiditate aliquid quaerat adipisci voluptate nemo temporibus dolorem eaque?
-                Repudiandae, quae enim necessitatibus provident dolores pariatur facere nesciunt et consequatur perferendis deserunt adipisci! Dolor aspernatur repellat eius obcaecati, et nostrum iure quae laboriosam inventore aliquid quam soluta laudantium animi.
-               </p>
+               <p class="font-normal text-teal-800 p-4 leading-8 text-justify">
+                Africa bloom corporate est un conglomérat majeur des travaux publics 
+                et du bâtiment au Sénégal et dans la Sous-Région Ouest Africaine. 
+                Africa Bloom COrporate est engagé dans des secteurs clés = fort impact de l'économie et 
+                de nos capacités intégrées couvrent tout le spectre de la "conception pour livrer". 
+                Avec près d'une décennie d'une approche forte axée sur le client et une recherche continue
+                 de qualité, nous répondrons aux besoins critiques en BTP, en Aménagement hydro agricoles, et en assainissements.  
+                </p>
             </div>
         </div>
     <!-- end apropos -->
     <!-- fast track -->
-        <div class="h-screen flex justify-between items-center bg-teal-900">
-            <div class="w-1/3 ml-20 container" >
-                <h1 class="text-5xl font-bold my-4 text-white">Fast Track</h1>
+        <div class="h-80vh flex flex-col  sm:flex-row sm:justify-between items-center bg-teal-900">
+            <div class="md:w-1/3 sm:ml-20 p-4 w-full container" >
+                <h1 class="sm:text-5xl text-3xl font-bold my-4 text-white">Fast Track</h1>
                 <p class="text-green-500 text-xl my-4 font-mono fond-bold">
                     Pour le Futur du Sénégal et de l'Afrique
                 </p>
@@ -116,14 +152,14 @@
                     de développement de notre cher pays et de nous adapter rapidement aux contraintes du marché Africain tout en préservant notre ADN.
                 </p>
             </div>
-            <div class="w-2/4">
-                <img src="./img/bg.avif" alt="" srcset="">
+            <div class="md:w-1/3 sm:p-0 p-4 w-full ">
+                <img src="./img/bg.avif" alt="" class="sm:h-96" srcset="">
             </div>
         </div>
     <!-- end fast track -->
     <!-- home 3-->
-        <section class="flex justify-end bg-img h-80vh text-white text-right items-center">
-            <div class="m-10 p-10 w-2/4 bg-none">
+        <section class="flex sm:justify-end justify-center bg-img h-80vh text-white text-right items-center">
+            <div class="m-10 p-10 md:w-2/4 w-full bg-none">
                 <h1 class="text-teal-500 font-bold font-mono text-xl my-5">UN NIVEAU D'EXIGENCES DANS NOS LIVRABLES</h1>
                 <P class="text-4xl leading-10">
                     Chaque aspect de nos actvités est caractérisé par le professionnalisme et des normes élevées de gouvernance
@@ -138,8 +174,8 @@
     <section id="expertises" class="h-80vh flex-col text-center p-5 flex justify-center items-center">
         <h1 class="uppercase text-teal-500 text-lg my-4 font-bold">Pour répondre à toutes vos spécifités</h1>
         <h1 class="text-teal-700 text-2xl mb-5 font-bold">Une palette d'expertises</h1>
-        <div class="flex justify-center m-5 w-full items-center">
-            <div class="w-64  m-5">
+        <div class="flex md:flex-row flex-col justify-center m-5 w-full items-center">
+            <div class="w-64 m-5">
                 <img src="./img/card1.jpg" class="h-64" alt="">
                 <h2 class="my-4 text-teal-700 text-md font-bold">Bâtiments & Génie Civil</h2>
                 <button class="text-gray-400 ">Voir details</button>
@@ -166,9 +202,9 @@
     <section class="bg-gray-50 flex flex-col justify-center items-center" style="min-height: 50vh;">
         <h1 class="uppercase text-teal-400 text-lg my-4 font-bold">l'effet bloom</h1>
         <h1 class="text-teal-700 text-2xl mb-5 font-bold">Notre particularité</h1>
-        <div class="flex justify-center text-center m-5 w-full">
-            <div class="w-1/4 m-4 ">
-                <div class="rond h-16 mx-auto w-16 rounded-full flex justify-center items-center bg-teal-700">
+        <div class="flex justify-center md:flex-row flex-col text-center m-5 items-center">
+            <div class="md:w-2/4 w-full m-4">
+                <div class="sm:h-16 h-12 w-12 mx-auto sm:w-16  rounded-full flex justify-center items-center bg-teal-700">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="" class="h-8 mx-auto w-8 fill-teal-500" viewBox="0 0 512 512">
                         <path d="M448 480H64c-35.3 0-64-28.7-64-64V96C0 60.7 28.7 32 64 32H181.5c17 0 33.3 6.7 45.3 18.7l26.5 26.5c12 12 28.3 18.7 45.3 18.7H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64zM184 272c-13.3 0-24 10.7-24 24s10.7 24 24 24H328c13.3 0 24-10.7 24-24s-10.7-24-24-24H184z"/>
                     </svg>
@@ -179,8 +215,8 @@
                     pour former un groupe solide et fiable au service des clients
                 </p>
             </div>
-            <div class="w-1/4  m-4 ">
-                <div class="rond h-16 mx-auto w-16 flex justify-center items-center rounded-full bg-teal-700">
+            <div class="md:w-2/4 w-full  m-4 ">
+                <div class="sm:h-16 h-12 w-12 mx-auto sm:w-16  flex justify-center items-center rounded-full bg-teal-700">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 mx-auto w-8 fill-teal-500" viewBox="0 0 640 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M360 72c0-22.1-17.9-40-40-40s-40 17.9-40 40s17.9 40 40 40s40-17.9 40-40zM144 208c22.1 0 40-17.9 40-40s-17.9-40-40-40s-40 17.9-40 40s17.9 40 40 40zM32 416c-17.7 0-32 14.3-32 32s14.3 32 32 32H608c17.7 0 32-14.3 32-32s-14.3-32-32-32H32zM496 208c22.1 0 40-17.9 40-40s-17.9-40-40-40s-40 17.9-40 40s17.9 40 40 40zM200 313.5l26.9 49.9c6.3 11.7 20.8 16 32.5 9.8s16-20.8 9.8-32.5l-36.3-67.5c1.7-1.7 3.2-3.6 4.3-5.8L264 217.5V272c0 17.7 14.3 32 32 32h48c17.7 0 32-14.3 32-32V217.5l26.9 49.9c1.2 2.2 2.6 4.1 4.3 5.8l-36.3 67.5c-6.3 11.7-1.9 26.2 9.8 32.5s26.2 1.9 32.5-9.8L440 313.5V352c0 17.7 14.3 32 32 32h48c17.7 0 32-14.3 32-32V313.5l26.9 49.9c6.3 11.7 20.8 16 32.5 9.8s16-20.8 9.8-32.5l-37.9-70.3c-15.3-28.5-45.1-46.3-77.5-46.3H486.2c-16.3 0-31.9 4.5-45.4 12.6l-33.6-62.3c-15.3-28.5-45.1-46.3-77.5-46.3H310.2c-32.4 0-62.1 17.8-77.5 46.3l-33.6 62.3c-13.5-8.1-29.1-12.6-45.4-12.6H134.2c-32.4 0-62.1 17.8-77.5 46.3L18.9 340.6c-6.3 11.7-1.9 26.2 9.8 32.5s26.2 1.9 32.5-9.8L88 313.5V352c0 17.7 14.3 32 32 32h48c17.7 0 32-14.3 32-32V313.5z"/>
                     </svg>
                 </div>
@@ -189,8 +225,8 @@
                     Nous établissons les relations solides et durables fondées sur la confiance mutuelle et la transparence
                 </p>
             </div>
-            <div class="w-1/4  m-4">
-                <div class="rond h-16 mx-auto w-16 rounded-full flex justify-center items-center bg-teal-700">
+            <div class="md:w-2/4 w-full  m-4">
+                <div class="rond sm:h-16 h-12 w-12 mx-auto sm:w-16 rounded-full flex justify-center items-center bg-teal-700">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 mx-auto w-8 fill-teal-500" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zM329 305c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-95 95-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L329 305z"/>
                     </svg>
                 </div>
@@ -206,10 +242,10 @@
     </section>
     <!-- end particularite  -->
         <!--nos realisations -->    
-        <section id="realisations" class="flex flex-col p-10 justify-center items-center" style="min-height: 60vh;">
-            <h1 class="uppercase text-teal-400 text-lg my-4 font-bold">l'effet bloom de plus près</h1>
+        <section id="realisations" class="flex flex-col p-10 justify-center items-center" style="min-height: 60vh;overflow: scroll;">
+            <h1 class="uppercase text-teal-400 sm:text-center text-lg my-4 font-bold">l'effet bloom de plus près</h1>
             <h1 class="text-teal-700 text-2xl mb-5 font-bold">Nos réalisations</h1>
-            <div class="splide">
+            <div class="splide flex items-center text-center justify-center mx-auto">
                 <div class="splide__arrows">
                     <button title="suivant" class="splide__arrow splide__arrow--prev bg-white text-5xl font-bold text-teal-500">
                         &LeftArrow;
@@ -221,7 +257,7 @@
                 <div class="splide__track">
                 <ul class="splide__list">
                     <li class="splide__slide">
-                        <div class="w-3/4 bg-gray-50 rounded-lg" style="height: 400px;">
+                        <div class="sm:w-3/4  w-2/4 bg-gray-50 rounded-lg">
                             <img src="./img/slide.jfif" alt="" class="h-72 rounded-lg">
                             <h2 class="text-teal-700 text-xl p-4 font-bold">
                                 Inauguration Travaux Camp Dial Diop
@@ -230,7 +266,7 @@
                         </div>
                     </li>
                     <li class="splide__slide">
-                        <div class="w-3/4 bg-gray-50 rounded-lg" style="height: 400px;">
+                        <div class="sm:w-3/4  w-2/4 bg-gray-50 rounded-lg">
                             <img src="./img/slide3.jpg" alt="" class="h-72 rounded-lg">
                             <h2 class="text-teal-700 text-xl p-4 font-bold">
                                 Construction du stade LECLERC
@@ -239,7 +275,7 @@
                         </div>
                     </li>
                     <li class="splide__slide">
-                        <div class="w-3/4 bg-gray-50 rounded-lg" style="height: 400px;">
+                        <div class="sm:w-3/4  w-2/4 bg-gray-50 rounded-lg">
                             <img src="./img/slide2.jfif" alt="" class="h-72 rounded-lg">
                             <h2 class="text-teal-700 text-xl p-4 font-bold">
                                 Réhabilitation Hôpital Militaire de Ouakam
@@ -248,7 +284,7 @@
                         </div>
                     </li>
                     <li class="splide__slide">
-                        <div class="w-3/4 bg-gray-50 rounded-lg" style="height: 400px;">
+                        <div class="sm:w-3/4  w-2/4 bg-gray-50 rounded-lg">
                             <img src="./img/slide4.webp" alt="" class="h-72">
                             <h2 class="text-teal-700 text-xl p-4 font-bold">
                                 Amphitéâtre ENOA
@@ -264,56 +300,56 @@
 
         <!-- Contacts -->    
     <section class="bg-gray-100 flex flex-col justify-center items-center" id="contact" style="min-height: 50vh;">
-        <h1 class="uppercase text-teal-400 text-5xl my-4 font-bold">LOGO</h1>
-        <p class="w-2/4 text-gray-400 p-10">
+        <h1 class="uppercase text-teal-400 sm:text-5xl text-3xl my-4 font-bold">LOGO</h1>
+        <p class="md:w-2/4 w-full text-gray-400 sm:p-10 p-5">
             Africa bloom corporate est un conglomérat majeur des travaux publics et du bâtiment au Sénégal et dans la Sous-Région Ouest Africaine.
         </p>
         <p class="">
-            <ul class="flex my-5 justify-between text-lg font-bold text-gray-400">
-                <li class="mx-3">
+            <ul class="flex my-5 justify-between items-center sm:flex-row flex-col text-lg font-bold text-gray-400">
+                <li class="sm:mx-3 my-3">
                     <a href="./#apropos">A propos</a>
                 </li>
-                <li class="mx-3">
+                <li class="sm:mx-3 my-3">
                     <a href="./#expertises">Expertises</a>
                 </li>
-                <li class="mx-3">
+                <li class="sm:mx-3 my-3">
                     <a href="./#realisations">Réalisations</a>
                 </li>
-                <li class="mx-3">
+                <li class="sm:mx-3 my-3">
                     <a href="./#equipe">Equipe</a>
                 </li>
-                <li class="mx-3">
+                <li class="sm:mx-3 my-3">
                     <a href="./#contact">Contact</a>
                 </li>
             </ul>
         </p>
         <div class="flex justify-center sm:flex-col flex-wrap lg:flex-row text-center m-5 w-full">
-            <div class="md:w-1/4 sm:w-full m-4">
-                <div class="rond h-20 mx-auto w-20 rounded-full flex justify-center  items-center bg-teal-700">
+            <div class="md:w-1/4 w-full m-4">
+                <div class="rond sm:h-20 h-12 w-12 mx-auto sm:w-20 rounded-full flex justify-center  items-center bg-teal-700">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 mx-auto w-8 fill-teal-500" viewBox="0 0 50 50"><path d="M 36 2 C 35.570313 2 35.136719 2.015625 34.71875 2.0625 C 34.605469 2.074219 34.488281 2.109375 34.375 2.125 C 34.070313 2.164063 33.765625 2.21875 33.46875 2.28125 C 33.355469 2.304688 33.269531 2.316406 33.15625 2.34375 C 32.863281 2.414063 32.566406 2.5 32.28125 2.59375 C 32.1875 2.625 32.09375 2.652344 32 2.6875 C 31.699219 2.796875 31.382813 2.929688 31.09375 3.0625 C 31.023438 3.09375 30.976563 3.125 30.90625 3.15625 C 30.597656 3.304688 30.292969 3.453125 30 3.625 C 29.953125 3.652344 29.890625 3.691406 29.84375 3.71875 C 29.53125 3.90625 29.230469 4.097656 28.9375 4.3125 C 28.914063 4.332031 28.898438 4.355469 28.875 4.375 C 28.5625 4.609375 28.257813 4.863281 27.96875 5.125 C 27.960938 5.132813 27.945313 5.117188 27.9375 5.125 C 27.636719 5.398438 27.363281 5.699219 27.09375 6 C 25.1875 8.125 24 10.925781 24 14 C 24 18.148438 26.136719 20.992188 28.40625 24 C 29.230469 25.09375 30.109375 26.246094 30.9375 27.53125 C 32.722656 29.773438 34.371094 32.410156 35.28125 35.90625 C 35.421875 36.449219 35.417969 36.875 35.65625 37.0625 C 35.765625 37.085938 35.871094 37.09375 36 37.09375 C 36.128906 37.09375 36.234375 37.082031 36.34375 37.0625 C 36.582031 36.875 36.578125 36.449219 36.71875 35.90625 C 37.628906 32.410156 39.277344 29.773438 41.0625 27.53125 C 41.890625 26.246094 42.769531 25.089844 43.59375 24 C 43.734375 23.816406 43.863281 23.621094 44 23.4375 C 44.214844 23.152344 44.417969 22.878906 44.625 22.59375 C 44.722656 22.460938 44.808594 22.320313 44.90625 22.1875 C 45.0625 21.964844 45.222656 21.753906 45.375 21.53125 C 45.484375 21.367188 45.582031 21.195313 45.6875 21.03125 C 45.820313 20.828125 45.972656 20.644531 46.09375 20.4375 C 46.203125 20.253906 46.304688 20.0625 46.40625 19.875 C 46.515625 19.679688 46.621094 19.480469 46.71875 19.28125 C 46.820313 19.078125 46.910156 18.863281 47 18.65625 C 47.085938 18.464844 47.175781 18.257813 47.25 18.0625 C 47.339844 17.832031 47.394531 17.613281 47.46875 17.375 C 47.527344 17.1875 47.605469 17.003906 47.65625 16.8125 C 47.726563 16.53125 47.761719 16.230469 47.8125 15.9375 C 47.839844 15.773438 47.886719 15.636719 47.90625 15.46875 C 47.964844 15 48 14.503906 48 14 C 48 7.382813 42.617188 2 36 2 Z M 6.34375 6 C 3.953125 6 2 7.953125 2 10.34375 L 2 43.65625 C 2 43.882813 2.027344 44.09375 2.0625 44.3125 C 2.382813 46.386719 4.179688 48 6.34375 48 L 39.65625 48 C 39.882813 48 40.09375 47.972656 40.3125 47.9375 C 42.277344 47.632813 43.8125 46.011719 43.96875 44 L 44 44 L 44 26.78125 C 43.582031 27.355469 43.160156 27.957031 42.75 28.59375 L 42.625 28.78125 C 40.597656 31.328125 39.367188 33.675781 38.65625 36.40625 C 38.625 36.523438 38.613281 36.617188 38.59375 36.71875 C 38.515625 37.125 38.371094 37.773438 37.90625 38.3125 L 42 42.40625 L 42 43.65625 C 42 44.941406 40.941406 46 39.65625 46 L 38.40625 46 L 24.34375 31.96875 L 27.9375 28.3125 L 31.5 31.90625 C 30.914063 30.871094 30.21875 29.839844 29.375 28.78125 L 29.25 28.59375 C 28.667969 27.691406 28.078125 26.902344 27.5 26.125 L 7.59375 46 L 6.34375 46 C 5.058594 46 4 44.941406 4 43.65625 L 4 42.40625 L 24.46875 21.90625 C 23.058594 19.671875 22 17.183594 22 14 C 22 11.027344 22.941406 8.269531 24.53125 6 Z M 12.125 10 C 13.710938 10 15.132813 10.605469 16.21875 11.59375 L 14.5 13.3125 C 13.855469 12.761719 13.039063 12.4375 12.125 12.4375 C 10.089844 12.4375 8.4375 14.089844 8.4375 16.125 C 8.4375 18.160156 10.089844 19.8125 12.125 19.8125 C 13.835938 19.8125 15.003906 18.789063 15.4375 17.375 L 12.125 17.375 L 12.125 15.03125 L 17.875 15.03125 C 18.378906 17.414063 17.46875 22.21875 12.125 22.21875 C 8.75 22.21875 6 19.5 6 16.125 C 6 12.75 8.75 10 12.125 10 Z M 36 11 C 37.65625 11 39 12.34375 39 14 C 39 15.65625 37.65625 17 36 17 C 34.34375 17 33 15.65625 33 14 C 33 12.34375 34.34375 11 36 11 Z"></path></svg>
                 </div>
                 <h2 class="my-4 text-gray-400 text-md font-bold uppercase">Adresse</h2>
-                <p class=" my-4 text-teal-700 text-md font-bold">
+                <p class=" my-4 text-teal-700 sm:text-lg text-md  font-bold">
                     01 Place de l'indépendance Immeuble allumettes, 2e étage appt G
                 </p>
             </div>
-            <div class="w-1/4  m-4 ">
-                <div class="rond h-20 mx-auto w-20 flex justify-center items-center rounded-full bg-teal-700">
+            <div class="md:w-1/4 w-full m-4 ">
+                <div class="rond sm:h-20 h-12 w-12 mx-auto sm:w-20 flex justify-center items-center rounded-full bg-teal-700">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 mx-auto w-8 fill-teal-500" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>
                 </div>
                 <h2 class="my-4 text-gray-400 text-md font-bold uppercase">Adresse e-mail</h2>
-                <p class="my-4 text-teal-700 text-md font-bold">
+                <p class="my-4 text-teal-700 sm:text-lg text-md  font-bold">
                     contact@africorporate.com
                 </p>
             </div>
-            <div class="w-1/4  m-4">
-                <div class="rond h-20 mx-auto w-20 rounded-full flex justify-center items-center bg-teal-700">
+            <div class="md:w-1/4 w-full m-4">
+                <div class="rond sm:h-20 h-12 w-12 mx-auto sm:w-20 rounded-full flex justify-center items-center bg-teal-700">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 mx-auto w-8 fill-teal-500" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
                 </div>
                 <h2 class="my-4 text-gray-400 text-md font-bold uppercase">
                     Numéro de téléphone
                 </h2>
-                <p class="my-4 text-teal-700 text-lg font-bold">
+                <p class="my-4 text-teal-700 sm:text-lg text-md font-bold">
                     <span class="text-green-400">(+221) </span> 33 821 61 55
                 </p>
             </div>
@@ -322,11 +358,11 @@
     <!-- end contacts  -->
     <!-- footer -->
     <section class="h-20 bg-gray-50 text-sm flex justify-around flex-wrap  items-center text-center">
-        <div class="w-1/3 text-gray-400   flex justify-center items-center">
+        <div class="sm:w-1/3 w-full text-gray-400   flex justify-center items-center">
             <a href="#" class="m-4">Plan du site</a>
             <a href="#" class="m-4">Emplois</a>
         </div>
-        <div class="max-w-1/3 text-green-400 h-12 text-sm flex justify-center items-center">
+        <div class="sm:w-1/3 w-full  text-green-400 h-12 text-sm flex justify-center items-center">
             <span class="p-5">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 fill-green-500" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
             </span>
@@ -337,7 +373,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg"  class="h-5 fill-green-500"  viewBox="0 0 320 512"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
             </span>
         </div>
-        <div class="w-1/3 text-gray-400  text-sm flex justify-center items-center">
+        <div class="sm:w-1/3 w-full text-gray-400  text-sm flex justify-center items-center">
             <a href="#" class="m-4">
                 ABC &copy; Tous droits réservés
             </a>
@@ -345,10 +381,11 @@
     </section>
     <!-- end footer -->
           <script>
+            // slide
         var splide = new Splide( '.splide', {
         perPage: 3,
         perMove: 1,
-        padding: '10rem',
+        padding: '5rem',
         breakpoints: {
             1024: {
         perPage: 3,
@@ -362,6 +399,12 @@
         },
         });
         splide.mount();
+        // menu
+        function toggleMenu(){
+            let menu = document.getElementById('mobile');menu.classList.toggle('hidden');
+            let open = document.getElementById('open');open.classList.toggle('hidden');
+            let close = document.getElementById('close');close.classList.toggle('hidden');
+        }
           </script>
 </body>
 </html>
