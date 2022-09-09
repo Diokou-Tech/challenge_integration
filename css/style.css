@@ -26,6 +26,7 @@ img {
 .bg-img{
     background-image: url(../img/home-1.jpg) !important;
     background-size: 100% 100%;
+    background-attachment: fixed;
 }
 .h-80vh{
     min-height: 80vh !important;
@@ -40,5 +41,13 @@ img {
     }
     100%{
         opacity: 1;
+    }
+}
+@keyframes menudown {
+    from {
+        opacity:1;
+    }
+    to{
+        opacity: 0;
     }
 }
